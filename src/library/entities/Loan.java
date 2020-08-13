@@ -16,36 +16,36 @@ public class Loan implements Serializable {
 //	private int LoAn_Id;
         private int loanId; //changed int name loanId from LoAn_Id
 //	private Book BoOk;
-        private String book; //Changed data type from Book to String
+        private Book book; //Changed variable name from book to BoOk
 //	private Member MeMbEr;
-        private String member; //Changed data type from Member to String
+        private Member member; //Changed variable name from MeMbEr to member
 //	private Date DaTe;
-        private int date; //Changed data type from Date to int
+        private Date date; //Changed variable name from DaTe to date
 //	private lOaN_sTaTe StAtE;
-        private String state; //Changed data type from Member to String
+        private LoanState state; //Changed variable name from StAtE to state
         
 
 	
 //	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
-        public Loan(int loanId, String book, String member, int dueDate) { // Edit data type
+        public Loan(int loanId, String book, String member, Date dueDate) { // Edit data type
 		this.loanId = loanId;
 		this.book = book;
 		this.member = member;
 		this.date = dueDate;
-		this.state = lOaN_sTaTe.CURRENT;
+		this.state = LoanState.CURRENT;
 	}
 
 	
 	public void checkOverDue() { //changed method name from cHeCk_OvEr_DuE() to checkOverDue()
-		if (state == lOaN_sTaTe.CURRENT &&
+		if (state == LoanState.CURRENT &&
 			Calendar.getInstance().getDate().after(date)) {
-			this.state = lOaN_sTaTe.OVER_DUE;
+			this.state = LoanState.OVER_DUE;
                 }		
 	}
 
 	
 	public boolean isOverDue() { //changed method name from Is_OvEr_DuE() to isOverDue()
-		return state == lOaN_sTaTe.OVER_DUE;
+		return state == LoanState.OVER_DUE;
 	}
 
 	
@@ -64,7 +64,7 @@ public class Loan implements Serializable {
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("Loan:  ").append(loanId).append("\n")
-		  .append("  Borrower ").append(member.getId()).append(" : ") 
+		  .append("  Borrower ").append(member.getId()).append(" : ")
 		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n")
 		  .append("  Book ").append(book.gEtId()).append(" : " )
 		  .append(book.getTitle()).append("\n") 
@@ -74,18 +74,18 @@ public class Loan implements Serializable {
 	}
 
 
-	public String getMember() { //Changed method name from GeT_MeMbEr() to getMember()
+	public Member getMember() { //Changed method name from GeT_MeMbEr() to getMember()
 		return member;
 	}
 
 
-	public String getBook() { //changed method name from GeT_BoOk() to getBook()
+	public Book getBook() { //changed method name from GeT_BoOk() to getBook()
 		return book; 
 	}
 
 
 	public void discharge() { //changed method name from DiScHaRgE() to discharge()
-		state = lOaN_sTaTe.DISCHARGED;		
+		state = LoanState.DISCHARGED;		
 	}
 
 }
