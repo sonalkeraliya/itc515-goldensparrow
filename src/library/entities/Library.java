@@ -52,7 +52,7 @@ public class Library implements Serializable {
 	public static synchronized Library getInstance() {		
 		if (self == null) {
 			Path path = path.get(libraryFile);			
-			if (Files.exists(Path)) {	
+			if (Files.exists(path)) {	
 				try (ObjectInputStream libraryFile = new ObjectInputStream(new FileInputStream(libraryFile));) {
 			    
 					self = (Library) libraryFile.readObject();
