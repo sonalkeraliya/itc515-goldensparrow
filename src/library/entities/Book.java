@@ -14,7 +14,7 @@ public class Book implements Serializable {
 //	private String AuThOr;
         private String author; //Changed author from AuThOr
 //	private String CALLNO;
-        private String callNo; //Changed callNo from CALLNO
+        private String callNumber; //Changed callNumber from CALLNO
 //        private int iD;
 	private int id; //Changed id from iD
 	
@@ -23,26 +23,26 @@ public class Book implements Serializable {
 	private State state;
 	
 	
-	public Book(String author, String title, String callNo, int id) {
+	public Book(String author, String title, String callNumber, int id) {
 		this.author = author;
 		this.title = title;
-		this.callNo = callNo;
+		this.callNumber = callNumber;
 		this.id = id;
 		this.state = State.AVAILABLE;
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(id).append("\n")
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Book: ").append(id).append("\n")
 		  .append("  Title:  ").append(title).append("\n")
 		  .append("  Author: ").append(author).append("\n")
-		  .append("  CallNo: ").append(callNo).append("\n")
+		  .append("  CallNumber: ").append(callNumber).append("\n")
 		  .append("  State:  ").append(state);
 		
-		return sb.toString();
+		return stringBuilder.toString();
 	}
 
-	public Integer getId() { //Changed method name from gEtId() to getId()
+	public int getId() { //Changed method name from gEtId() to getId() and changed int from Integer
 		return id;
 	}
 
