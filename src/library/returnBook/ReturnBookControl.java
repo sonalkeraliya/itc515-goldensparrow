@@ -18,8 +18,8 @@ public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookCont
 	
 
 	public ReturnBookControl() {   // rETURN_bOOK_cONTROL to ReturnBookControl
-		this.lIbRaRy = Library.GeTiNsTaNcE();
-		sTaTe = cOnTrOl_sTaTe.INITIALISED;
+		this.library = Library.getInstance();
+		state = ControlState.INITIALISED;
 	}
 	
 	
