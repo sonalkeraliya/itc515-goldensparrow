@@ -9,7 +9,7 @@ import library.entities.Loan;
 
 public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookControl
 
-	private ReturnBookUI objUi;  //Ui to objUi
+	private ReturnBookUI objUI;  //Ui to objUI
 	private enum ControlState {INITIALISED, READY, RESTRICTED};;  // cOnTrOl_sTaTe to 
 	private ControlState state; // cOnTrOl_sTaTe to ControlState and sTaTe to state
 	
@@ -17,13 +17,13 @@ public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookCont
 	private Loan currentLoan;  //CurrENT_loan to currentLoan
 	
 
-	public rETURN_bOOK_cONTROL() {
+	public ReturnBookControl() {   // rETURN_bOOK_cONTROL to ReturnBookControl
 		this.lIbRaRy = Library.GeTiNsTaNcE();
 		sTaTe = cOnTrOl_sTaTe.INITIALISED;
 	}
 	
 	
-	public void sEt_uI(ReturnBookUI uI) {
+	public void setUI(ReturnBookUI objUI) { // sEt_uI to setUI , ui to objUI
 		if (!sTaTe.equals(cOnTrOl_sTaTe.INITIALISED)) 
 			throw new RuntimeException("ReturnBookControl: cannot call setUI except in INITIALISED state");
 		
@@ -33,7 +33,7 @@ public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookCont
 	}
 
 
-	public void bOoK_sCaNnEd(int bOoK_iD) {
+	public void bookScanned(int bookId) { // bOoK_sCaNnEd to  bookScanned, bOoK_iD to bookId
 		if (!sTaTe.equals(cOnTrOl_sTaTe.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		
@@ -64,7 +64,7 @@ public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookCont
 	}
 
 
-	public void sCaNnInG_cOmPlEtE() {
+	public void scanningComplete() { // sCaNnInG_cOmPlEtE to scanningComplete
 		if (!sTaTe.equals(cOnTrOl_sTaTe.READY)) 
 			throw new RuntimeException("ReturnBookControl: cannot call scanningComplete except in READY state");
 			
@@ -72,7 +72,7 @@ public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookCont
 	}
 
 
-	public void dIsChArGe_lOaN(boolean iS_dAmAgEd) {
+	public void dischargeLoan(boolean isDamaged) { // dIsChArGe_lOaN to dischargeLoan , iS_dAmAgEd to isDamaged
 		if (!sTaTe.equals(cOnTrOl_sTaTe.INSPECTING)) 
 			throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
 		
