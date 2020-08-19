@@ -1,4 +1,4 @@
-// Author: Sonal
+// Author: Rinkal
 // Mediator : Rachana
 // Reviewer: Sanjay
 
@@ -27,7 +27,7 @@ public class Loan implements Serializable {
 
 	
 //	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
-        public Loan(int loanId, String book, String member, Date dueDate) { // Edit data type
+        public Loan(int loanId, String book, String member, Date dueDate) { 
 		this.loanId = loanId;
 		this.book = book;
 		this.member = member;
@@ -60,7 +60,7 @@ public class Loan implements Serializable {
 	
 	
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy"); //Changed ("dd/mm/yyyy") from ("dd/MM/yyyy")
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("Loan:  ").append(loanId).append("\n")
