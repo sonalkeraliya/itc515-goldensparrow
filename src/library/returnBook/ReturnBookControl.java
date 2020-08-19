@@ -7,14 +7,14 @@ import library.entities.Book;
 import library.entities.Library;
 import library.entities.Loan;
 
-public class rETURN_bOOK_cONTROL {
+public class ReturnBookControl { // change rETURN_bOOK_cONTROL to ReturnBookControl
 
-	private ReturnBookUI Ui;
-	private enum cOnTrOl_sTaTe { INITIALISED, READY, INSPECTING };
-	private cOnTrOl_sTaTe sTaTe;
+	private ReturnBookUI objUi;  //Ui to objUi
+	private enum ControlState {INITIALISED, READY, RESTRICTED};;  // cOnTrOl_sTaTe to 
+	private ControlState state; // cOnTrOl_sTaTe to ControlState and sTaTe to state
 	
-	private Library lIbRaRy;
-	private Loan CurrENT_loan;
+	private Library library;  //lIbRaRy to library
+	private Loan currentLoan;  //CurrENT_loan to currentLoan
 	
 
 	public rETURN_bOOK_cONTROL() {
