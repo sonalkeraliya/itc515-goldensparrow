@@ -1,20 +1,24 @@
+// Author: Rinkal
+// Mediator : Rachana
+// Reviewer: Sanjay
+
 package library.returnBook;
 import java.util.Scanner;
 
 
 public class ReturnBookUI {
 
-	public static enum uI_sTaTe { INITIALISED, READY, INSPECTING, COMPLETED };
+	public static enum UiState { INITIALISED, READY, INSPECTING, COMPLETED }; //changed UiState from uI_sTaTe
 
-	private rETURN_bOOK_cONTROL CoNtRoL;
-	private Scanner iNpUt;
-	private uI_sTaTe StATe;
+	private rETURN_bOOK_cONTROL control; //Changed control from CoNtRoL
+	private Scanner input; //Changed input from iNpUt
+	private UiState state; //Changed state from StATe
 
 	
 	public ReturnBookUI(rETURN_bOOK_cONTROL cOnTrOL) {
-		this.CoNtRoL = cOnTrOL;
-		iNpUt = new Scanner(System.in);
-		StATe = uI_sTaTe.INITIALISED;
+		this.control = control; //Change control from CoNtRoL
+		input = new Scanner(System.in); //Changed input from iNpUt
+		state = UiState.INITIALISED; //changed UiState from uI_sTaTe and Changed state from StATe
 		cOnTrOL.sEt_uI(this);
 	}
 
@@ -80,7 +84,7 @@ public class ReturnBookUI {
 		oUtPuT(object);
 	}
 	
-	public void sEt_sTaTe(uI_sTaTe state) {
+	public void sEt_sTaTe(UiState state) { //changed UiState from uI_sTaTe
 		this.StATe = state;
 	}
 
