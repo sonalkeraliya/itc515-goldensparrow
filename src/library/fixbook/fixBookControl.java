@@ -10,12 +10,12 @@ import library.entities.Library;
 
 public class fixBookControl { // fIX_bOOK_cONTROL to fixBookControl
 	
-	private FixBookUI Ui;
-	private enum CoNtRoL_StAtE { INITIALISED, READY, FIXING };
-	private CoNtRoL_StAtE StAtE;
+	private FixBookUI UI;
+	private enum ControlState { INITIALISED, READY, FIXING }; // CoNtRoL_StAtE to ControlState
+	private ControlState state;  // CoNtRoL_StAtE to ControlState
 	
-	private Library LiBrArY;
-	private Book CuRrEnT_BoOk;
+	private Library library; // LiBrArY to library
+	private Book currentBook;  // CuRrEnT_BoOk to currentBook
 
 
 	public FixBookControl() {  // fIX_bOOK_cONTROL to FixBookControl
