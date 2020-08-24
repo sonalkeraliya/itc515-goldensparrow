@@ -8,7 +8,7 @@ package library.fixbook;
 import library.entities.Book;
 import library.entities.Library;
 
-public class fIX_bOOK_cONTROL {
+public class fixBookControl { // fIX_bOOK_cONTROL to fixBookControl
 	
 	private FixBookUI Ui;
 	private enum CoNtRoL_StAtE { INITIALISED, READY, FIXING };
