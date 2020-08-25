@@ -21,7 +21,7 @@ public class FixBookUI {
 		this.control = control; //changed control from CoNtRoL
 		input = new Scanner(System.in); //changed input from InPuT
 		state = UiState.INITIALISED; //changed from uI_sTaTe to UiState and changed from StAtE to state
-		control.SeT_Ui(this);
+		control.setUi(this); //changed from SeT_Ui to setUi
 	}
 
 
