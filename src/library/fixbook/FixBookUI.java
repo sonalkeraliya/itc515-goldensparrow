@@ -12,21 +12,21 @@ public class FixBookUI {
         public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; //changed from uI_sTaTe to UiState
 
 //	private fIX_bOOK_cONTROL CoNtRoL;
-        private FixBookControl CoNtRoL; //changed class name from fIX_bOOK_cONTROL to FixBookControl
-	private Scanner InPuT;
-	private UiState StAtE;//changed from uI_sTaTe to UiState
+        private FixBookControl control; //changed class name from fIX_bOOK_cONTROL to FixBookControl and changed control from CoNtRoL
+	private Scanner input; //changed input from InPuT
+	private UiState state;//changed from uI_sTaTe to UiState and changed from StAtE to state
 
 	
-	public FixBookUI(FixBookControl CoNtRoL) { //changed class name from fIX_bOOK_cONTROL to FixBookControl
-		this.CoNtRoL = CoNtRoL;
-		InPuT = new Scanner(System.in);
-		StAtE = UiState.INITIALISED;//changed from uI_sTaTe to UiState
-		CoNtRoL.SeT_Ui(this);
+	public FixBookUI(FixBookControl control) { //changed class name from fIX_bOOK_cONTROL to FixBookControl
+		this.control = control; //changed control from CoNtRoL
+		input = new Scanner(System.in); //changed input from InPuT
+		state = UiState.INITIALISED; //changed from uI_sTaTe to UiState and changed from StAtE to state
+		control.SeT_Ui(this);
 	}
 
 
 	public void SeT_StAtE(UiState state) {
-		this.StAtE = state;
+		this.state = state; //changed from StAtE to state
 	}
 
 	
@@ -35,17 +35,17 @@ public class FixBookUI {
 		
 		while (true) {
 			
-			switch (StAtE) {
+			switch (state) { //changed from StAtE to state
 			
 			case READY:
-				String BoOk_EnTrY_StRiNg = iNpUt("Scan Book (<enter> completes): ");
+				String BoOk_EnTrY_StRiNg = input("Scan Book (<enter> completes): "); //changed input from InPuT
 				if (BoOk_EnTrY_StRiNg.length() == 0) 
-					CoNtRoL.SCannING_COMplete();
+					control.SCannING_COMplete(); //changed control from CoNtRoL
 				
 				else {
 					try {
 						int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
-						CoNtRoL.BoOk_ScAnNeD(BoOk_Id);
+						control.BoOk_ScAnNeD(BoOk_Id); //changed control from CoNtRoL
 					}
 					catch (NumberFormatException e) {
 						OuTpUt("Invalid bookId");
@@ -54,12 +54,12 @@ public class FixBookUI {
 				break;	
 				
 			case FIXING:
-				String AnS = iNpUt("Fix Book? (Y/N) : ");
+				String AnS = input("Fix Book? (Y/N) : "); //changed input from InPuT
 				boolean FiX = false;
 				if (AnS.toUpperCase().equals("Y")) 
 					FiX = true;
 				
-				CoNtRoL.FiX_BoOk(FiX);
+				control.FiX_BoOk(FiX); //changed control from CoNtRoL
 				break;
 								
 			case COMPLETED:
@@ -68,7 +68,7 @@ public class FixBookUI {
 			
 			default:
 				OuTpUt("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);			
+				throw new RuntimeException("FixBookUI : unhandled state :" + state); //changed from StAtE to state		
 			
 			}		
 		}
@@ -76,9 +76,9 @@ public class FixBookUI {
 	}
 
 	
-	private String iNpUt(String prompt) {
+	private String input(String prompt) { //changed input from InPuT
 		System.out.print(prompt);
-		return InPuT.nextLine();
+		return input.nextLine(); //changed input from InPuT
 	}	
 		
 		
