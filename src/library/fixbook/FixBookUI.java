@@ -40,12 +40,12 @@ public class FixBookUI {
 			case READY:
 				String bookEntryString = input("Scan Book (<enter> completes): "); //changed input from InPuT and changed string name from BoOk_EnTrY_StRiNg to bookEntryString
 				if (bookEntryString.length() == 0) //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
-					control.SCannING_COMplete(); //changed control from CoNtRoL
+					control.scanningComplete(); //changed control from CoNtRoL
 				
 				else {
 					try {
-						int BoOk_Id = Integer.valueOf(bookEntryString).intValue(); //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
-						control.BoOk_ScAnNeD(BoOk_Id); //changed control from CoNtRoL
+						int bookId = Integer.valueOf(bookEntryString).intValue(); //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
+						control.BoOk_ScAnNeD(bookId); //changed control from CoNtRoL and changed bookId from BoOk_Id
 					}
 					catch (NumberFormatException e) {
 						output("Invalid bookId"); //changed output from OuTpUt
