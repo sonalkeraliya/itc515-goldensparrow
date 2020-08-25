@@ -8,18 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import library.borrowbook.BorrowBookUI;
-import library.borrowbook.bORROW_bOOK_cONTROL;
+import library.borrowbook.BorrowBookControl; // bORROW_bOOK_cONTROL to BorrowBookControl
 import library.entities.Book;
 import library.entities.Calendar;
 import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 import library.fixbook.FixBookUI;
-import library.fixbook.fIX_bOOK_cONTROL;
-import library.payfine.PayFineUI;
-import library.payfine.pAY_fINE_cONTROL;
+import library.fixbook.FixBookControl; // fIX_bOOK_cONTROL to FixBookControl
+import library.payfine.PayFineUI; // PayFineUI to payFineUI
+import library.payfine.payFineControl; // pAY_fINE_cONTROL to payFineControl
 import library.returnBook.ReturnBookUI;
-import library.returnBook.rETURN_bOOK_cONTROL;
+import library.returnBook.returnBookControl; // rETURN_bOOK_cONTROL to returnBookControl
 
 
 public class Main {
