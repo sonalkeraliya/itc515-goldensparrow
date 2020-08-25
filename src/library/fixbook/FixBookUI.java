@@ -25,12 +25,12 @@ public class FixBookUI {
 	}
 
 
-	public void SeT_StAtE(UiState state) {
+	public void setState(UiState state) { //changed method name setState from SeT_StAtE
 		this.state = state; //changed from StAtE to state
 	}
 
 	
-	public void RuN() {
+	public void run() { //changed method name run from RuN
 		OuTpUt("Fix Book Use Case UI\n");
 		
 		while (true) {
@@ -82,12 +82,12 @@ public class FixBookUI {
 	}	
 		
 		
-	private void OuTpUt(Object object) {
+	private void output(Object object) { //changed method name output from OuTpUt
 		System.out.println(object);
 	}
 	
 
-	public void dIsPlAy(Object object) {
+	public void display(Object object) { //changed method name display from dIsPlAy
 		OuTpUt(object);
 	}
 	
