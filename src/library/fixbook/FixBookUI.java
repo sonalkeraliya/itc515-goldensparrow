@@ -45,7 +45,7 @@ public class FixBookUI {
 				else {
 					try {
 						int bookId = Integer.valueOf(bookEntryString).intValue(); //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
-						control.BoOk_ScAnNeD(bookId); //changed control from CoNtRoL and changed bookId from BoOk_Id
+						control.bookScanned(bookId); //changed control from CoNtRoL and changed bookId from BoOk_Id
 					}
 					catch (NumberFormatException e) {
 						output("Invalid bookId"); //changed output from OuTpUt
@@ -55,11 +55,11 @@ public class FixBookUI {
 				
 			case FIXING:
 				String AnS = input("Fix Book? (Y/N) : "); //changed input from InPuT
-				boolean FiX = false;
+				boolean fix = false; //Changed fix from FiX
 				if (AnS.toUpperCase().equals("Y")) 
-					FiX = true;
+					fix = true; //Changed fix from FiX
 				
-				control.FiX_BoOk(FiX); //changed control from CoNtRoL
+				control.fixBook(fix); //changed control from CoNtRoL and changed from FiX_BoOk to fixBook
 				break;
 								
 			case COMPLETED:
