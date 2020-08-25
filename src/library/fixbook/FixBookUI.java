@@ -39,9 +39,9 @@ public class FixBookUI {
 			
 			case READY:
 				String bookEntryString = input("Scan Book (<enter> completes): "); //changed input from InPuT and changed string name from BoOk_EnTrY_StRiNg to bookEntryString
-				if (bookEntryString.length() == 0) //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
+				if (bookEntryString.length() == 0) { //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
 					control.scanningComplete(); //changed control from CoNtRoL
-				
+				}
 				else {
 					try {
 						int bookId = Integer.valueOf(bookEntryString).intValue(); //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
@@ -56,9 +56,9 @@ public class FixBookUI {
 			case FIXING:
 				String AnS = input("Fix Book? (Y/N) : "); //changed input from InPuT
 				boolean fix = false; //Changed fix from FiX
-				if (AnS.toUpperCase().equals("Y")) 
+				if (AnS.toUpperCase().equals("Y")) {
 					fix = true; //Changed fix from FiX
-				
+				}
 				control.fixBook(fix); //changed control from CoNtRoL and changed from FiX_BoOk to fixBook
 				break;
 								
