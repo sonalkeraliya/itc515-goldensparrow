@@ -11,12 +11,13 @@ public class FixBookUI {
 //	public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
         public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; //changed from uI_sTaTe to UiState
 
-	private fIX_bOOK_cONTROL CoNtRoL;
+//	private fIX_bOOK_cONTROL CoNtRoL;
+        private FixBookControl CoNtRoL; //changed class name from fIX_bOOK_cONTROL to FixBookControl
 	private Scanner InPuT;
 	private UiState StAtE;//changed from uI_sTaTe to UiState
 
 	
-	public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
+	public FixBookUI(FixBookControl CoNtRoL) { //changed class name from fIX_bOOK_cONTROL to FixBookControl
 		this.CoNtRoL = CoNtRoL;
 		InPuT = new Scanner(System.in);
 		StAtE = UiState.INITIALISED;//changed from uI_sTaTe to UiState
