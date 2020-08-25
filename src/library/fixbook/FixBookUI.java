@@ -31,24 +31,24 @@ public class FixBookUI {
 
 	
 	public void run() { //changed method name run from RuN
-		OuTpUt("Fix Book Use Case UI\n");
+		output("Fix Book Use Case UI\n"); //changed output from OuTpUt
 		
 		while (true) {
 			
 			switch (state) { //changed from StAtE to state
 			
 			case READY:
-				String BoOk_EnTrY_StRiNg = input("Scan Book (<enter> completes): "); //changed input from InPuT
-				if (BoOk_EnTrY_StRiNg.length() == 0) 
+				String bookEntryString = input("Scan Book (<enter> completes): "); //changed input from InPuT and changed string name from BoOk_EnTrY_StRiNg to bookEntryString
+				if (bookEntryString.length() == 0) //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
 					control.SCannING_COMplete(); //changed control from CoNtRoL
 				
 				else {
 					try {
-						int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
+						int BoOk_Id = Integer.valueOf(bookEntryString).intValue(); //changed string name from BoOk_EnTrY_StRiNg to bookEntryString
 						control.BoOk_ScAnNeD(BoOk_Id); //changed control from CoNtRoL
 					}
 					catch (NumberFormatException e) {
-						OuTpUt("Invalid bookId");
+						output("Invalid bookId"); //changed output from OuTpUt
 					}
 				}
 				break;	
@@ -63,11 +63,11 @@ public class FixBookUI {
 				break;
 								
 			case COMPLETED:
-				OuTpUt("Fixing process complete");
+				output("Fixing process complete"); //changed output from OuTpUt
 				return;
 			
 			default:
-				OuTpUt("Unhandled state");
+				output("Unhandled state"); //changed output from OuTpUt
 				throw new RuntimeException("FixBookUI : unhandled state :" + state); //changed from StAtE to state		
 			
 			}		
@@ -88,7 +88,7 @@ public class FixBookUI {
 	
 
 	public void display(Object object) { //changed method name display from dIsPlAy
-		OuTpUt(object);
+		output(object); //changed output from OuTpUt
 	}
 	
 	
