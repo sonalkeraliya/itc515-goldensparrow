@@ -1,25 +1,30 @@
+// Author: Rinkal
+// Mediator : Rachana
+// Reviewer: Sanjay
+
 package library.fixbook;
 import java.util.Scanner;
 
 
 public class FixBookUI {
 
-	public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
+//	public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
+        public static enum UiState { INITIALISED, READY, FIXING, COMPLETED }; //changed from uI_sTaTe to UiState
 
 	private fIX_bOOK_cONTROL CoNtRoL;
 	private Scanner InPuT;
-	private uI_sTaTe StAtE;
+	private UiState StAtE;//changed from uI_sTaTe to UiState
 
 	
 	public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
 		this.CoNtRoL = CoNtRoL;
 		InPuT = new Scanner(System.in);
-		StAtE = uI_sTaTe.INITIALISED;
+		StAtE = UiState.INITIALISED;//changed from uI_sTaTe to UiState
 		CoNtRoL.SeT_Ui(this);
 	}
 
 
-	public void SeT_StAtE(uI_sTaTe state) {
+	public void SeT_StAtE(UiState state) {
 		this.StAtE = state;
 	}
 
