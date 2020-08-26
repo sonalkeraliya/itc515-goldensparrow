@@ -79,7 +79,7 @@ public class Main {
 			while (!exit) {
 				
 				output("\n" + sdf.format(calendar.getDate())); // SDF to sdf,CAL to calendar,gEt_DaTe to getDate
-				String char = input(menu); // MENU to menu,c to char
+				String ch = input(menu); // MENU to menu,c to ch
 				
 				switch (char.toUpperCase()) {
 				
