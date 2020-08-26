@@ -31,7 +31,7 @@ public class Main {
 	private static SimpleDateFormat sdf; //  to sdf
 	
 	
-	private static String Get_menu() {
+	private static String getMenu() { // Get_menu to getMenu
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
@@ -141,12 +141,12 @@ public class Main {
 	}	
 
 	
-	private static void PAY_FINES() {
+	private static void payFines() { //  PAY_FINES to payFines
 		new PayFineUI(new pAY_fINE_cONTROL()).RuN();		
 	}
 
 
-	private static void LIST_CURRENT_LOANS() {
+	private static void listCurrentLoans() { //  LIST_CURRENT_LOANS to listCurrentLoans
 		output("");
 		for (Loan loan : LIB.lISt_CuRrEnT_LoAnS()) {
 			output(loan + "\n");
@@ -155,7 +155,7 @@ public class Main {
 
 
 
-	private static void LIST_BOOKS() {
+	private static void listBooks() { // LIST_BOOKS to listBooks
 		output("");
 		for (Book book : LIB.lIsT_BoOkS()) {
 			output(book + "\n");
@@ -164,7 +164,7 @@ public class Main {
 
 
 
-	private static void LIST_MEMBERS() {
+	private static void listMembers() { // LIST_MEMBERS to listMembers
 		output("");
 		for (Member member : LIB.lIsT_MeMbErS()) {
 			output(member + "\n");
@@ -173,22 +173,22 @@ public class Main {
 
 
 
-	private static void BORROW_BOOK() {
+	private static void borrowBook() { // BORROW_BOOK to borrowBook
 		new BorrowBookUI(new bORROW_bOOK_cONTROL()).RuN();		
 	}
 
 
-	private static void RETURN_BOOK() {
+	private static void returnbook() { //  RETURN_BOOK to returnbook
 		new ReturnBookUI(new rETURN_bOOK_cONTROL()).RuN();		
 	}
 
 
-	private static void FIX_BOOKS() {
+	private static void fixBooks() { // FIX_BOOKS to fixBooks 
 		new FixBookUI(new fIX_bOOK_cONTROL()).RuN();		
 	}
 
 
-	private static void INCREMENT_DATE() {
+	private static void incrementDate() { // INCREMENT_DATE to incrementDate
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
 			CAL.incrementDate(days);
@@ -201,7 +201,7 @@ public class Main {
 	}
 
 
-	private static void ADD_BOOK() {
+	private static void addBook() { // ADD_BOOK to addBook
 		
 		String AuThOr = input("Enter author: ");
 		String TiTlE  = input("Enter title: ");
@@ -212,7 +212,7 @@ public class Main {
 	}
 
 	
-	private static void ADD_MEMBER() {
+	private static void addMember() { // ADD_MEMBER to addMember
 		try {
 			String LaSt_NaMe = input("Enter last name: ");
 			String FiRsT_NaMe  = input("Enter first name: ");
