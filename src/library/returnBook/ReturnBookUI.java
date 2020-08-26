@@ -50,7 +50,7 @@ public class ReturnBookUI {
 				break;				
 				
 			case INSPECTING:
-				String AnS = input("Is book damaged? (Y/N): ");
+				String ans = input("Is book damaged? (Y/N): "); //changed ans from AnS
 				boolean isDamaged = false; //changed isDamaged from Is_DAmAgEd
 				if (AnS.toUpperCase().equals("Y")) 					
 					isDamaged = true; //changed isDamaged from Is_DAmAgEd
