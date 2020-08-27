@@ -63,7 +63,7 @@ public class BorrowBookControl { //class name updated to BorrowBookControl
 		if (!state.equals(ControlState.SCANNING))  // used updated variables
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
-		book = library.getBook(bOoKiD); // method name updated to getBook and used updated variables
+		book = library.getBook(bookID); // method name updated to getBook and used updated variables
 		if (book == null) { // used updated variables
 			ui.display("Invalid bookId"); // used updated variables
 			return;
