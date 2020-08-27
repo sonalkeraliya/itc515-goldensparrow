@@ -60,11 +60,11 @@ public class Main {
 	public static void main(String[] args) {		
 		try {			
 			input = new Scanner(System.in); // changed IN to input
-			library = Library.GeTiNsTaNcE(); // LIB to library
-			calendar = Calendar.gEtInStAnCe(); // CAL to calendar
+			library = Library.getInstance(); // LIB to library
+			calendar = Calendar.getInstance(); // CAL to calendar
 			sdf = new SimpleDateFormat("dd/MM/yyyy"); // SDF to sdf
 	
-			for (Member member : LIB.lIsT_MeMbErS()) { // m to member
+			for (Member member : library.listMembers()) { // m to member
 				output(member);
 			}
 			output(" ");
@@ -79,7 +79,7 @@ public class Main {
 			while (!exit) {
 				
 				output("\n" + sdf.format(calendar.getDate())); // SDF to sdf,CAL to calendar,gEt_DaTe to getDate
-				String ch = input(menu); // MENU to menu,c to ch
+				String char = input(menu); // MENU to menu,c to char
 				
 				switch (char.toUpperCase()) {
 				
