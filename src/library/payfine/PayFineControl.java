@@ -2,28 +2,28 @@ package library.payfine;
 import library.entities.Library;
 import library.entities.Member;
 
-public class payFineControl {
+public class PayFineControl {
 	
-	private PayFineUI Ui;
+	private PayFineUI UI;
 	private enum controlState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private controlState State;
 	
-	private Library Library;
-	private Member Member;
+	private Library library;
+	private Member member;
 
 
-	public payFineControl() {
-		this.Library = Library.getInstance();
+	public PayFineControl() {
+		this.library = library.getInstance();
 		Stete = controlState.INITIALISED;
 	}
 	
 	
-	public void SetUi(PayFineUi Ui) {
+	public void SetUi(PayFineUI UI) {
 		if (!State.equals(control_state.INITIALISED)) {
 			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
 		}	
-		this.Ui = ui;
-		Ui.setState(PayFineUi.UiState.READY);
+		this.UI = UI;
+		UI.setState(PayFineUI.UIState.READY);
 		State = controlState.READY;		
 	}
 
@@ -35,17 +35,17 @@ public class payFineControl {
 		member = library.getMember(memberId);
 		
 		if (member == null) {
-			Ui.display("Invalid Member Id");
+			UI.display("Invalid Member Id");
 			return;
 		}
-		Ui.display(membEr.toString());
-		Ui.setState(PayFineUi.Ui_state.PAYING);
+		UI.display(membEr.toString());
+		UI.setState(PayFineUI.UI_state.PAYING);
 		State = control_state.PAYING;
 	}
 	
 	
 	public void cancel() {
-		Ui.setStatE(PayFineUi.UiState.CANCELLED);
+		UI.setStatE(PayFineUI.UIState.CANCELLED);
 		State = controlState.CANCELLED;
 	}
 
@@ -56,10 +56,10 @@ public class payFineControl {
 			
 		double change = member.payFine(amount);
 		if (change > 0) 
-			Ui.display(String.format("Change: $%.2f", change));
+			UI.display(String.format("Change: $%.2f", change));
 		
-		Ui.display(member.toString());
-		Ui.setStatE(PayFineUi.UiState.COMPLETED);
+		UI.display(member.toString());
+		UI.setStatE(PayFineUI.UIState.COMPLETED);
 		state = controlState.COMPLETED;
 		return change;
 	}
