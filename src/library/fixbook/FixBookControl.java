@@ -71,7 +71,7 @@ public class FixBookControl { // fIX_bOOK_cONTROL to FixBookControl
 		if (!state.equals(ControlState.READY)) 
 			throw new RuntimeException("FixBookControl: cannot call scanningComplete except in READY state");
 			
-		UI.setState(FixBookUI.uiState.COMPLETED);		
+		UI.setState(FixBookUI.UIState.COMPLETED);		
 	}
 
 }
