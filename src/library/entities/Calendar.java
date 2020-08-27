@@ -67,13 +67,17 @@ public class Calendar {
 		calendar.add(java.util.Calendar.DATE, loanPeriod); //Used updated variable name calendar
 		Date dueDate = calendar.getTime(); //Updated variable name dueDate and used updated variable name calendar
 		calendar.setTime(now); //Used updated variable name calendar and variable name now
+
 		return dueDaTe; //Used updated variable name dueDate
+
 	}
 	
 	public synchronized long getDaysDifference(Date targetDate) //Updated method name getDaysDifference
 	{
 		long diffMillis = getDate().getTime() - targetDate.getTime(); //Updated variable name diffMillis and used updated method name getDate
 	    	long diffDays = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS); //Updated variable name diffDays and used updated variable name diffMillis
+
 	    	return diffDays; //Used updated variable name diffDays
+
 	}
 }
